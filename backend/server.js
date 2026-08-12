@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import path from 'path';
 
 import categoriesRouter from './routes/categories.js';
 import productsRouter from './routes/products.js';
@@ -24,8 +23,8 @@ const app = express();
 app.use(cors());        // allows your React dev server (port 5173) to call this API
 app.use(express.json());
 
-// Serve uploaded product photos at http://localhost:5000/uploads/filename.jpg
-app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+// Note: product photos are now hosted on Cloudinary (see routes/upload.js),
+// not served from a local /uploads folder — that wouldn't survive on serverless hosting.
 
 // ---------- Public routes ----------
 app.use('/api/categories', categoriesRouter);
@@ -47,6 +46,14 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+
+// Vercel runs this file as a serverless function and calls the exported app
+// directly — it must NOT call app.listen() itself, or the deploy will hang/fail.
+// Locally (npm run dev), we still want the normal persistent server.
+if (process.env.VERCEL !== '1') {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+export default app;

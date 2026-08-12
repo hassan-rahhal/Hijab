@@ -1,0 +1,204 @@
+.cart-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 40px 100px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #57632c;
+  margin-bottom: 30px;
+  transition: color 0.2s ease;
+}
+.back-link svg { width: 14px; height: 14px; stroke: currentColor; transition: transform 0.2s ease; }
+.back-link:hover { color: #3d4620; }
+.back-link:hover svg { transform: translateX(-3px); }
+
+.cart-page-header { margin-bottom: 34px; }
+
+.cart-page-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  color: #b79553;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cart-page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: #3d4620;
+}
+
+.cart-page-status {
+  font-size: 0.9rem;
+  color: #57632c;
+  padding: 40px 0;
+}
+
+.cart-empty-state {
+  text-align: center;
+  padding: 80px 0;
+  color: #57632c;
+}
+.cart-empty-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #3d4620;
+  text-decoration: underline;
+}
+
+.cart-page-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 50px;
+  align-items: start;
+}
+
+.cart-page-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-line {
+  display: flex;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(87, 99, 44, 0.15);
+}
+
+.cart-line-swatch {
+  width: 84px;
+  height: 100px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.cart-line-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cart-line-name { font-size: 1.05rem; color: #2a2e1a; }
+.cart-line-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #74813f;
+}
+
+.cart-line-qty {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.qty-btn {
+  width: 26px; height: 26px;
+  border: 1px solid rgba(87, 99, 44, 0.4);
+  background: none;
+  border-radius: 50%;
+  font-size: 0.95rem;
+  color: #3d4620;
+  line-height: 1;
+  cursor: pointer;
+}
+.qty-btn:hover:not(:disabled) { border-color: #3d4620; }
+.qty-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.qty-val { font-size: 0.88rem; min-width: 16px; text-align: center; }
+
+.cart-line-remove {
+  margin-left: 10px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #b79553;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cart-line-remove:hover { color: #3d4620; }
+
+.cart-line-price {
+  font-size: 0.95rem;
+  color: #2a2e1a;
+  white-space: nowrap;
+  align-self: flex-start;
+}
+
+.cart-summary {
+  border: 1px solid rgba(87, 99, 44, 0.2);
+  border-radius: 2px;
+  padding: 26px;
+  position: sticky;
+  top: 100px;
+}
+
+.cart-summary-title {
+  font-size: 1.3rem;
+  color: #3d4620;
+  margin-bottom: 20px;
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #57632c;
+  margin-bottom: 12px;
+}
+
+.cart-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.05rem;
+  color: #3d4620;
+  padding-top: 14px;
+  margin-top: 4px;
+  margin-bottom: 22px;
+  border-top: 1px solid rgba(87, 99, 44, 0.2);
+}
+
+.cart-checkout-btn {
+  width: 100%;
+  background: #3d4620;
+  color: #f4f0e1;
+  border: none;
+  padding: 15px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.cart-checkout-btn:hover { background: #57632c; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .cart-page { padding: 40px 24px 80px; }
+  .cart-page-layout { grid-template-columns: 1fr; gap: 30px; }
+  .cart-summary { position: static; }
+}
+
+@media (max-width: 480px) {
+  .cart-page { padding: 30px 16px 70px; }
+  .cart-line { gap: 12px; }
+  .cart-line-swatch { width: 64px; height: 78px; }
+}

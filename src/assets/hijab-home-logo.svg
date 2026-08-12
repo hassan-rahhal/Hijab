@@ -1,0 +1,49 @@
+<svg width="600" height="260" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .word { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; }
+    </style>
+  </defs>
+
+  <!-- Background (remove/replace this rect if you want a transparent logo) -->
+  <rect width="600" height="260" fill="#57632c"/>
+
+  <!-- ===================== Floral flourish (top right) ===================== -->
+  <g stroke="#f4f0e1" stroke-width="1.4" fill="none" stroke-linecap="round">
+    <!-- circular loop of the "R" -->
+    <path d="M470 70
+             C 495 55, 520 65, 522 90
+             C 524 115, 500 128, 478 118
+             C 460 110, 458 88, 470 70 Z"/>
+    <!-- long sweeping tail -->
+    <path d="M466 96
+             C 452 112, 440 118, 420 116
+             C 460 128, 500 126, 540 108"/>
+    <!-- small inner leaf strokes near the loop -->
+    <path d="M472 76 C 466 66, 456 62, 448 66"/>
+    <path d="M470 82 C 462 78, 454 80, 450 86"/>
+    <!-- stem rising from the loop -->
+    <path d="M478 68 C 476 54, 470 44, 460 36"/>
+    <!-- little flower/bud at the top of the stem -->
+    <path d="M460 36 C 456 30, 448 28, 444 32 C 448 22, 458 20, 464 26 C 470 20, 480 22, 482 30 C 476 28, 468 32, 460 36 Z"
+          fill="#f4f0e1" stroke="none"/>
+  </g>
+
+  <!-- ===================== Wordmark: HIJAB ===================== -->
+  <text x="40" y="170" class="word" font-size="108" font-weight="500" fill="#f4f0e1" letter-spacing="2">HIJAB</text>
+
+  <!-- ===================== Divider + HOME ===================== -->
+  <g stroke="#f4f0e1" stroke-width="1.5">
+    <line x1="40" y1="196" x2="80" y2="196"/>
+  </g>
+  <!-- small leaf/wheat flourish between the lines -->
+  <g fill="#f4f0e1" stroke="none">
+    <ellipse cx="90" cy="193" rx="5" ry="2.4" transform="rotate(-20 90 193)"/>
+    <ellipse cx="98" cy="193" rx="5" ry="2.4" transform="rotate(-5 98 193)"/>
+    <ellipse cx="106" cy="193" rx="5" ry="2.4" transform="rotate(15 106 193)"/>
+    <ellipse cx="94" cy="197" rx="5" ry="2.4" transform="rotate(10 94 197)"/>
+    <ellipse cx="102" cy="197" rx="5" ry="2.4" transform="rotate(-10 102 197)"/>
+  </g>
+  <line x1="118" y1="196" x2="200" y2="196" stroke="#f4f0e1" stroke-width="1.5"/>
+  <text x="212" y="202" class="word" font-size="26" font-weight="500" fill="#f4f0e1" letter-spacing="6">HOME</text>
+</svg>

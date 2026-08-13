@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { API_BASE } from './lib/session.js';
 import './ShopPage.css';
 
 const SORT_LABELS = {
@@ -21,7 +22,7 @@ function ShopPage() {
 
   // Load categories once, for the filter pills
   useEffect(() => {
-    fetch('http://localhost:5000/api/categories')
+    fetch(`${API_BASE}/categories`)
       .then((res) => res.json())
       .then(setCategories)
       .catch(() => {});
@@ -36,7 +37,7 @@ function ShopPage() {
     if (activeCategory !== 'all') params.set('category', activeCategory);
     params.set('sort', sort);
 
-    fetch(`http://localhost:5000/api/products?${params.toString()}`)
+    fetch(`${API_BASE}/products?${params.toString()}`)
       .then((res) => {
         if (!res.ok) throw new Error('Request failed');
         return res.json();

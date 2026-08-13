@@ -30,8 +30,11 @@ router.post('/', async (req, res) => {
     );
     res.status(201).json({ id: result.insertId });
   } catch (err) {
+    if (err.code === 'ER_DUP_ENTRY') {
+      return res.status(409).json({ error: `A category named "${req.body.name}" already exists` });
+    }
     console.error(err);
-    res.status(500).json({ error: 'Failed to create category (name/slug may already exist)' });
+    res.status(500).json({ error: 'Failed to create category' });
   }
 });
 

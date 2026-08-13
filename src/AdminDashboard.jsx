@@ -499,7 +499,12 @@ function CategoriesTab() {
 
   async function addCategory() {
     if (!newName.trim()) return;
-    await adminFetch('/admin/categories', { method: 'POST', body: JSON.stringify({ name: newName, sortOrder: categories.length + 1 }) });
+    const res = await adminFetch('/admin/categories', { method: 'POST', body: JSON.stringify({ name: newName, sortOrder: categories.length + 1 }) });
+    if (!res.ok) {
+      const data = await res.json();
+      alert(data.error || 'Failed to add category');
+      return;
+    }
     setNewName('');
     load();
   }

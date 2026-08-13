@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { API_BASE } from './lib/session.js';
 import { setAdminToken, isAdminLoggedIn } from './lib/adminSession.js';
 import './AdminLogin.css';
@@ -40,6 +40,11 @@ function AdminLogin() {
   return (
     <div className="admin-login-page">
       <form className="admin-login-box" onSubmit={handleSubmit}>
+        <Link to="/" className="admin-back-link">
+          <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.6"><path d="M15 18l-6-6 6-6" /></svg>
+          Back
+        </Link>
+
         <div className="admin-login-brand serif">Hijab Home</div>
         <div className="admin-login-sub">Admin Access</div>
 

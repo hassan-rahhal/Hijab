@@ -146,7 +146,6 @@ function Home() {
         </div>
         <div className="footer-bottom">
           © 2026 HIJAB HOME
-          {/* <Link to="/portal-x7k9-login" className="admin-entry-link"></Link> */}
           <span>DESIGNED WITH CARE</span>
         </div>
       </footer>

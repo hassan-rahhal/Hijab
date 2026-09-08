@@ -145,8 +145,9 @@ function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          © 2026 HIJAB HOME
-          <span>DESIGNED WITH CARE</span>
+          <Link to="/portal-x7k9-login" className="admin-entry-link">© 2026 HIJAB HOME
+          <span>DESIGNED WITH CARE</span></Link>
+          
         </div>
       </footer>
 
